@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking_ise/SmartParking.ncd
+OUTFILE=/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking_ise/SmartParking.bit
+FAMILY=Spartan6
+PART=xc6slx9-3csg324
+WORKINGDIR=/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking_ise
+LICENSE=WebPack
+USER_INFO=__0_0_0

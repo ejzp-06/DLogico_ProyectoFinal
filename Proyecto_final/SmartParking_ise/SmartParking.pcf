@@ -1,0 +1,32 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Jun 21 20:58:31 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "display<4>" LOCATE = SITE "A4" LEVEL 1;
+COMP "enable<1>" LOCATE = SITE "A2" LEVEL 1;
+COMP "display<5>" LOCATE = SITE "B4" LEVEL 1;
+COMP "enable<2>" LOCATE = SITE "B2" LEVEL 1;
+COMP "display<6>" LOCATE = SITE "A3" LEVEL 1;
+COMP "display<7>" LOCATE = SITE "A5" LEVEL 1;
+COMP "clk" LOCATE = SITE "D9" LEVEL 1;
+COMP "LED0<0>" LOCATE = SITE "L15" LEVEL 1;
+COMP "sensor0" LOCATE = SITE "H17" LEVEL 1;
+COMP "sensor1" LOCATE = SITE "R10" LEVEL 1;
+COMP "LED0<1>" LOCATE = SITE "L16" LEVEL 1;
+COMP "sensor2" LOCATE = SITE "R8" LEVEL 1;
+COMP "sensor3" LOCATE = SITE "T4" LEVEL 1;
+COMP "LED1<0>" LOCATE = SITE "R11" LEVEL 1;
+COMP "LED1<1>" LOCATE = SITE "T11" LEVEL 1;
+COMP "LED2<0>" LOCATE = SITE "U8" LEVEL 1;
+COMP "LED2<1>" LOCATE = SITE "V8" LEVEL 1;
+COMP "LED3<0>" LOCATE = SITE "U7" LEVEL 1;
+COMP "LED3<1>" LOCATE = SITE "V7" LEVEL 1;
+COMP "display<0>" LOCATE = SITE "C6" LEVEL 1;
+COMP "display<1>" LOCATE = SITE "D6" LEVEL 1;
+COMP "display<2>" LOCATE = SITE "C5" LEVEL 1;
+COMP "display<3>" LOCATE = SITE "C4" LEVEL 1;
+COMP "enable<0>" LOCATE = SITE "B3" LEVEL 1;
+NET "clk_BUFGP/IBUFG" PERIOD = 83.3333333 ns HIGH 50%;
+SCHEMATIC END;
+

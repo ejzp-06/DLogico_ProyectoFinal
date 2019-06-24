@@ -1,0 +1,468 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
+ 
+--> 
+Reading design: SmartParking.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SmartParking.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SmartParking"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-csg324
+
+---- Source Options
+Top Module Name                    : SmartParking
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v" into library work
+Parsing module <DIG_simpleClockDivider>.
+Parsing module <SmartParkingLot>.
+Parsing module <SmartParking>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <SmartParking>.
+
+Elaborating module <DIG_simpleClockDivider(maxCounter=120)>.
+
+Elaborating module <SmartParkingLot>.
+WARNING:HDLCompiler:413 - "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v" Line 65: Result of 4-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v" Line 70: Result of 4-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v" Line 75: Result of 4-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v" Line 80: Result of 4-bit expression is truncated to fit in 2-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <SmartParking>.
+    Related source file is "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v".
+    Summary:
+	no macro.
+Unit <SmartParking> synthesized.
+
+Synthesizing Unit <DIG_simpleClockDivider>.
+    Related source file is "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v".
+        maxCounter = 120
+    Found 1-bit register for signal <state>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit adder for signal <counter[31]_GND_2_o_add_2_OUT> created at line 29.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <DIG_simpleClockDivider> synthesized.
+
+Synthesizing Unit <SmartParkingLot>.
+    Related source file is "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking.v".
+        zero = 8'b10000001
+        one = 8'b11001111
+        two = 8'b10010010
+        three = 8'b10000110
+        four = 8'b11001100
+    Found 8-bit register for signal <display>.
+    Found 2-bit adder for signal <n0040[1:0]> created at line 55.
+    Found 3-bit adder for signal <_n0059> created at line 55.
+    Found 3-bit adder for signal <available_parking> created at line 55.
+    Found 8x8-bit Read Only RAM for signal <displayprm>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+Unit <SmartParkingLot> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x8-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 4
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 1
+# Registers                                            : 3
+ 1-bit register                                        : 1
+ 32-bit register                                       : 1
+ 8-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <DIG_simpleClockDivider>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <DIG_simpleClockDivider> synthesized (advanced).
+
+Synthesizing (advanced) Unit <SmartParkingLot>.
+INFO:Xst:3231 - The small RAM <Mram_displayprm> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <available_parking> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <displayprm>    |          |
+    -----------------------------------------------------------------------
+Unit <SmartParkingLot> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x8-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 2
+ 3-bit adder                                           : 1
+ 3-bit adder carry in                                  : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 9
+ Flip-Flops                                            : 9
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <display_5> (without init value) has a constant value of 0 in block <SmartParkingLot>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_7> (without init value) has a constant value of 1 in block <SmartParkingLot>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <display_3> in Unit <SmartParkingLot> is equivalent to the following FF/Latch, which will be removed : <display_6> 
+
+Optimizing unit <SmartParking> ...
+
+Optimizing unit <SmartParkingLot> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SmartParking, actual ratio is 0.
+FlipFlop SmartParkingLot_i1/display_3 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 39
+ Flip-Flops                                            : 39
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : SmartParking.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 148
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 31
+#      LUT2                        : 33
+#      LUT3                        : 1
+#      LUT4                        : 5
+#      LUT6                        : 8
+#      MUXCY                       : 31
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 39
+#      FD                          : 39
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 4
+#      OBUF                        : 19
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              33  out of  11440     0%  
+ Number of Slice LUTs:                   83  out of   5720     1%  
+    Number used as Logic:                83  out of   5720     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     83
+   Number with an unused Flip Flop:      50  out of     83    60%  
+   Number with an unused LUT:             0  out of     83     0%  
+   Number of fully used LUT-FF pairs:    33  out of     83    39%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          24
+ Number of bonded IOBs:                  24  out of    200    12%  
+    IOB Flip Flops/Latches:               6
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)             | Load  |
+-----------------------------------+-----------------------------------+-------+
+DIG_simpleClockDivider_i0/state    | NONE(SmartParkingLot_i1/display_4)| 6     |
+clk                                | BUFGP                             | 33    |
+-----------------------------------+-----------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.164ns (Maximum Frequency: 240.136MHz)
+   Minimum input arrival time before clock: 2.548ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: 5.351ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.164ns (frequency: 240.136MHz)
+  Total number of paths / destination ports: 1586 / 33
+-------------------------------------------------------------------------
+Delay:               4.164ns (Levels of Logic = 3)
+  Source:            DIG_simpleClockDivider_i0/counter_25 (FF)
+  Destination:       DIG_simpleClockDivider_i0/counter_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: DIG_simpleClockDivider_i0/counter_25 to DIG_simpleClockDivider_i0/counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.981  DIG_simpleClockDivider_i0/counter_25 (DIG_simpleClockDivider_i0/counter_25)
+     LUT6:I0->O            3   0.203   0.995  DIG_simpleClockDivider_i0/counter[31]_GND_2_o_equal_2_o<31>5 (DIG_simpleClockDivider_i0/counter[31]_GND_2_o_equal_2_o<31>4)
+     LUT6:I1->O           17   0.203   1.028  DIG_simpleClockDivider_i0/counter[31]_GND_2_o_equal_2_o<31>7 (DIG_simpleClockDivider_i0/counter[31]_GND_2_o_equal_2_o)
+     LUT2:I1->O            1   0.205   0.000  DIG_simpleClockDivider_i0/counter_0_rstpot (DIG_simpleClockDivider_i0/counter_0_rstpot)
+     FD:D                      0.102          DIG_simpleClockDivider_i0/counter_0
+    ----------------------------------------
+    Total                      4.164ns (1.160ns logic, 3.004ns route)
+                                       (27.9% logic, 72.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'DIG_simpleClockDivider_i0/state'
+  Total number of paths / destination ports: 24 / 6
+-------------------------------------------------------------------------
+Offset:              2.548ns (Levels of Logic = 2)
+  Source:            sensor0 (PAD)
+  Destination:       SmartParkingLot_i1/display_4 (FF)
+  Destination Clock: DIG_simpleClockDivider_i0/state rising
+
+  Data Path: sensor0 to SmartParkingLot_i1/display_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   1.222   1.021  sensor0_IBUF (sensor0_IBUF)
+     LUT4:I0->O            1   0.203   0.000  SmartParkingLot_i1/Mram_displayprm21 (SmartParkingLot_i1/Mram_displayprm2)
+     FD:D                      0.102          SmartParkingLot_i1/display_2
+    ----------------------------------------
+    Total                      2.548ns (1.527ns logic, 1.021ns route)
+                                       (59.9% logic, 40.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'DIG_simpleClockDivider_i0/state'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            SmartParkingLot_i1/display_3_1 (FF)
+  Destination:       display<6> (PAD)
+  Source Clock:      DIG_simpleClockDivider_i0/state rising
+
+  Data Path: SmartParkingLot_i1/display_3_1 to display<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  SmartParkingLot_i1/display_3_1 (SmartParkingLot_i1/display_3_1)
+     OBUF:I->O                 2.571          display_6_OBUF (display<6>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               5.351ns (Levels of Logic = 3)
+  Source:            sensor0 (PAD)
+  Destination:       LED0<0> (PAD)
+
+  Data Path: sensor0 to LED0<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   1.222   0.773  sensor0_IBUF (sensor0_IBUF)
+     INV:I->O              1   0.206   0.579  SmartParkingLot_i1/_n00631_INV_0 (LED0_0_OBUF)
+     OBUF:I->O                 2.571          LED0_0_OBUF (LED0<0>)
+    ----------------------------------------
+    Total                      5.351ns (3.999ns logic, 1.351ns route)
+                                       (74.7% logic, 25.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.164|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.08 secs
+ 
+--> 
+
+
+Total memory usage is 392648 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

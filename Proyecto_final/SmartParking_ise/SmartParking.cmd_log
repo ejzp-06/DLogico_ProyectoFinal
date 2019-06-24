@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking_ise/SmartParking.xst" -ofn "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking_ise/SmartParking.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "/home/eduardozepeda/Desktop/Logical Design/PROYECTO/Final/SmartParking_constraints.ucf" -p xc6slx9-csg324-3 "SmartParking.ngc" SmartParking.ngd  
+map -intstyle ise -p xc6slx9-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SmartParking_map.ncd SmartParking.ngd SmartParking.pcf 
+par -w -intstyle ise -ol high -mt off SmartParking_map.ncd SmartParking.ncd SmartParking.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SmartParking.twx SmartParking.ncd -o SmartParking.twr SmartParking.pcf 
+bitgen -intstyle ise -f SmartParking.ut SmartParking.ncd 
